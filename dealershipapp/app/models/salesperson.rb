@@ -17,6 +17,4 @@ class Salesperson < ApplicationRecord
     end
 
 
-
-
 end
