@@ -4,7 +4,17 @@
     <%= salesp.label :name %>
     <%= salesp.text_field :name %>
     <br>
-    <%= salesp.submit "Add new salesperson" %>
+
+    <h3> Cars Assigning </h3> 
+
+    <select name = "car">
+    <% Car.all.each do |car|  %>
+    <option value=<%= car.id %>> <%= car.car_name %> </option>
+    <% end %>
+    </select> 
+
+    <%= salesp.submit "Add new salesperson" %> 
+
 <% end %>
 
-For later: Add way to assign cars on initialization
+

@@ -1,7 +1,7 @@
 class CarsController < ApplicationController
 
     def index
-        @cars = Car.all
+        @cars = Car.where("sold=?",false)
     end
 
     def show
@@ -14,17 +14,19 @@ class CarsController < ApplicationController
 
     def create
         @car = Car.create(my_params(:name, :brand, :price))
+        @car.sold = false
+        @car.save
         redirect_to car_path(@car)
     end
 
     def update
-        define_car
-        @car.update(my_params(:name, :brand, :price))
+        define_car.update(my_params(:name, :brand, :price, :sold))
         redirect_to car_path(@car)
     end
 
-    def delete
-
+    def destroy
+        define_car.destroy
+        redirect_to cars_path
     end
 
     def edit

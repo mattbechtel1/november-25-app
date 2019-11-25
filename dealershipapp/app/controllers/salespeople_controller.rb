@@ -13,6 +13,7 @@ class SalespeopleController < ApplicationController
 
     def create
         @salesperson = Salesperson.create(my_params(:name))
+        Assignment.create(car_id:params[:car],salesperson_id:@salesperson.id)
         redirect_to salesperson_path(@salesperson)
     end
 
@@ -22,7 +23,7 @@ class SalespeopleController < ApplicationController
         redirect_to salesperson_path(@salesperson)
     end
 
-    def delete
+    def destroy 
         #fire
         define_salesperson.destroy
         redirect_to salespeople_path

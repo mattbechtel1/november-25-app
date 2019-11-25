@@ -10,5 +10,8 @@
     <%= car.label :price %>
     <%= car.number_field :price, step: 100 %>
     <br>
+    <%= car.label :sold %>
+    <%= car.check_box :sold %>
+
     <%= car.submit "Edit car" %>
 <% end %>
