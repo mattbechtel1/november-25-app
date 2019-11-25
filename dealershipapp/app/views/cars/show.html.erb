@@ -6,7 +6,11 @@
 
 <h3>Assigned SalesPeople</h3> 
 
-
+<ul>
+<% @car.salespeople.each do |salesp|%>
+<li><%= link_to salesp.name , salesperson_path(salesp) %></li> 
+<% end %>
+</ul>
 
 <p><%= link_to 'Back to home', cars_path %></p>
 <p><%= link_to 'Edit Car Details', edit_car_path(@car) %></p>

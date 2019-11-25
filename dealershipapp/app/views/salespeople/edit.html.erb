@@ -1,10 +1,19 @@
 <h1>Edit Salesperson's Details</h1>
 
 <%= form_for @salesperson do |salesp| %>
+
     <%= salesp.label :name %>
     <%= salesp.text_field :name %>
-    <br>
-    <%= salesp.submit "Edit salesperson" %>
+    <br> 
+    <h3> Assign Car(s) </h3> 
+    <% Car.all.each do |car| %>
+    <div>
+    <%= check_box_tag 'car_ids[]', car.id  , car.isassigned?(salesp) %> 
+    <%= car.car_name %>
+    </div>
+    <% end %>
+    <%= salesp.submit "Edit salesperson" %>  
+
 <% end %>
 
-For later: Add way to assign cars
+For later: Add way to assign cars 

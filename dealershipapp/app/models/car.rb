@@ -5,4 +5,8 @@ class Car < ApplicationRecord
     def car_name
         "#{self.brand} #{self.name}"
     end
+
+    def isassigned?(salesperson)
+        self.salespeople.include?(salesperson)
+    end
 end

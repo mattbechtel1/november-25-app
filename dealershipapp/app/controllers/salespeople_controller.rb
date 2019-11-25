@@ -18,8 +18,9 @@ class SalespeopleController < ApplicationController
     end
 
     def update
-        define_salesperson
-        @salesperson.update(my_params(:name))
+        define_salesperson 
+        @salesperson.update(my_params(:name , car_ids: []))
+        @salesperson.cars
         redirect_to salesperson_path(@salesperson)
     end
 
