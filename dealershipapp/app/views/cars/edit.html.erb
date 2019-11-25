@@ -1,0 +1,14 @@
+<h1>Edit Car Details</h1>
+
+<%= form_for @car do |car| %>
+    <%= car.label :brand %>
+    <%= car.text_field :brand %>
+    <br>
+    <%= car.label :name %>
+    <%= car.text_field :name %>
+    <br>
+    <%= car.label :price %>
+    <%= car.number_field :price, step: 100 %>
+    <br>
+    <%= car.submit "Edit car" %>
+<% end %>

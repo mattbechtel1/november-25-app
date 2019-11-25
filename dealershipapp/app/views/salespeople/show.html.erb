@@ -1,0 +1,5 @@
+<h1><%= @salesperson.name %>'s Page</h1>
+
+<%= link_to "Fire #{@salesperson.name}", url_for(action: :delete, id: @salesperson.id), data: {confirm: "Are you sure?"} %>
+
+<h2>Cars <%= @salesperson.name %> is Responsible for:</h2>

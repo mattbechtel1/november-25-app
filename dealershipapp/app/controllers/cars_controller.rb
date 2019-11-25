@@ -5,7 +5,7 @@ class CarsController < ApplicationController
     end
 
     def show
-        @car = Car.find(params[:id])
+        define_car
     end
 
     def new
@@ -18,7 +18,9 @@ class CarsController < ApplicationController
     end
 
     def update
-
+        define_car
+        @car.update(my_params(:name, :brand, :price))
+        redirect_to car_path(@car)
     end
 
     def delete
@@ -26,7 +28,7 @@ class CarsController < ApplicationController
     end
 
     def edit
-
+        define_car
     end
 
     private
@@ -34,4 +36,9 @@ class CarsController < ApplicationController
     def my_params(*args)
         params.require(:car).permit(*args)
     end
+
+    def define_car
+        @car = Car.find(params[:id])
+    end
+
 end
