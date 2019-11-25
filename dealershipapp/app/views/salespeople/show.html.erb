@@ -9,6 +9,6 @@
 <% @salesperson.cars.each do |car|%>
 <li><%= link_to car.car_name , car_path(car) %></li>
 <% end %>
-
-<p> <%= "#{@salesperson.name} is responsible for $#{@salesperson.total_responsibility} worth of car stock." %>
 </ul>
+
+<div class="tidbit"> <%= "#{@salesperson.name} is responsible for $#{@salesperson.total_responsibility} worth of car stock." %></div>
