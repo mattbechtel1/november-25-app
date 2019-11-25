@@ -1,0 +1,7 @@
+<h1>Our Lovely Salespeople</h1>
+
+<ul>
+    <% @salespeople.each do |s| %>
+        <li><%= link_to s.name, salesperson_path(s) %></li>
+    <% end %>
+</ul>

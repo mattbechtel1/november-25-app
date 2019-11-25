@@ -1,0 +1,13 @@
+<h1>Add a Car to Our Lot</h1>
+
+<%= form_for @car do |car| %>
+    <%= car.label :brand %>
+    <%= car.text_field :brand %>
+    <br>
+    <%= car.label :name %>
+    <%= car.text_field :name %>
+    <br>
+    <%= car.label :price %>
+    <%= car.number_field :price, step: 100 %>
+    <%= car.submit "Add new car" %>
+<% end %>
