@@ -1,7 +1,7 @@
 <h1><%= @salesperson.name %>'s Page</h1>
 
-<%= link_to "Edit #{@salesperson.name}'s Profile", edit_salesperson_path(@salesperson) %>
-<%= link_to "Fire #{@salesperson.name}", salesperson_path(@salesperson), data: {confirm: "Are you sure you want to fire #{@salesperson.name}?"}, method: :delete %>
+<div><%= link_to "Edit #{@salesperson.name}'s Profile", edit_salesperson_path(@salesperson) %></div>
+<div><%= link_to "Fire #{@salesperson.name}", salesperson_path(@salesperson), data: {confirm: "Are you sure you want to fire #{@salesperson.name}?"}, method: :delete %></div>
 
 <h2>Cars <%= @salesperson.name %> is Responsible for:</h2>
 
@@ -9,4 +9,6 @@
 <% @salesperson.cars.each do |car|%>
 <li><%= link_to car.car_name , car_path(car) %></li>
 <% end %>
+
+<p> <%= "#{@salesperson.name} is responsible for $#{@salesperson.total_responsibility} worth of car stock." %>
 </ul>

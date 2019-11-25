@@ -1,5 +1,4 @@
-class Salesperson < ApplicationRecord
-    
+class Salesperson < ApplicationRecord    
     has_many :assignments
     has_many :cars , through: :assignments
 
@@ -11,6 +10,10 @@ class Salesperson < ApplicationRecord
                 self.cars << car
             end
         end  
+    end
+
+    def total_responsibility
+        self.cars.map { |car| car.price }.sum
     end
 
 

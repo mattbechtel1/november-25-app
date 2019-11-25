@@ -26,7 +26,8 @@ class SalespeopleController < ApplicationController
 
     def destroy 
         #fire
-        define_salesperson.destroy
+        define_salesperson.assignments.destroy_all
+        @salesperson.destroy
         redirect_to salespeople_path
     end
 
