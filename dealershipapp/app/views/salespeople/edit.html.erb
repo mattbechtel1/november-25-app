@@ -8,7 +8,7 @@
     <h3> Assign Car(s) </h3> 
     <% Car.all.each do |car| %>
     <div>
-    <%= check_box_tag 'car_ids[]', car.id  , car.isassigned?(salesp) %> 
+    <%= check_box_tag 'salesperson[car_ids][]', car.id, car.isassigned?(@salesperson) %> 
     <%= car.car_name %>
     </div>
     <% end %>

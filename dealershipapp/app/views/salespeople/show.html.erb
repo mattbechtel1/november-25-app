@@ -1,5 +1,6 @@
 <h1><%= @salesperson.name %>'s Page</h1>
 
+<%= link_to "Edit #{@salesperson.name}'s Profile", edit_salesperson_path(@salesperson) %>
 <%= link_to "Fire #{@salesperson.name}", salesperson_path(@salesperson), data: {confirm: "Are you sure you want to fire #{@salesperson.name}?"}, method: :delete %>
 
 <h2>Cars <%= @salesperson.name %> is Responsible for:</h2>

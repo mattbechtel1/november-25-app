@@ -19,8 +19,8 @@ class SalespeopleController < ApplicationController
 
     def update
         define_salesperson 
-        @salesperson.update(my_params(:name , car_ids: []))
-        @salesperson.cars
+        @salesperson.assignments.destroy_all
+        @salesperson.update(my_params(:name, car_ids: []))
         redirect_to salesperson_path(@salesperson)
     end
 
@@ -43,5 +43,8 @@ class SalespeopleController < ApplicationController
     def define_salesperson
         @salesperson = Salesperson.find(params[:id])
     end
+
+
+
 end
 

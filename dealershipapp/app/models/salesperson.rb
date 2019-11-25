@@ -1,4 +1,5 @@
 class Salesperson < ApplicationRecord
+    
     has_many :assignments
     has_many :cars , through: :assignments
 
@@ -6,9 +7,13 @@ class Salesperson < ApplicationRecord
     def car_ids=(ids)
         ids.each do |id|
             car = Car.find(id)
-            self.cars << car
+            unless self.cars.include?(car)
+                self.cars << car
+            end
         end  
     end
+
+
 
 
 end
